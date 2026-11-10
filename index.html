@@ -6,174 +6,230 @@
 <title>Nandini Nizampatnam – Frontend Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#F4F6FB; --surface:#FFFFFF; --ink:#16213E; --muted:#56607A; --line:#D9DFEE;
-  --accent:#2F4BFF; --accent-ink:#FFFFFF; --tint:#E6EAFF;
+  --violet:#1E3A8A; --violet-deep:#172B66; --sun:#9CC9FF;
+  --bg:#F4F6FA; --surface:#FFFFFF; --ink:#0F172A; --muted:#475569; --line:#D8DFEA; --tint:#E6ECF6;
   --display:'Bricolage Grotesque','Segoe UI',Arial,sans-serif;
   --body:'DM Sans','Segoe UI',Arial,sans-serif;
-  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
-  color-scheme:light;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){--bg:#0F1426;--surface:#171E38;--ink:#E8ECFA;--muted:#9AA5C6;--line:#2A3355;--accent:#7C92FF;--accent-ink:#0F1426;--tint:#222B52;color-scheme:dark}
-}
-:root[data-theme="dark"]{--bg:#0F1426;--surface:#171E38;--ink:#E8ECFA;--muted:#9AA5C6;--line:#2A3355;--accent:#7C92FF;--accent-ink:#0F1426;--tint:#222B52;color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1220;--surface:#131C30;--ink:#E8EDF7;--muted:#9FB0CC;--line:#25314D;--tint:#1B2640;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0B1220;--surface:#131C30;--ink:#E8EDF7;--muted:#9FB0CC;--line:#25314D;--tint:#1B2640;color-scheme:dark}
 *,*::before,*::after{box-sizing:inherit}
-html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
-.wrap{max-width:900px;margin:0 auto;padding:0 24px}
-header.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-family:var(--display);font-weight:700}
-header.top nav{display:flex;gap:22px;font-family:var(--body);font-weight:500;font-size:15px}
-header.top nav a{text-decoration:none;color:var(--muted)}
-header.top nav a:hover{color:var(--ink)}
-.hero{padding:72px 0 64px}
-.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(44px,9vw,92px);line-height:1;letter-spacing:-.03em;margin:0 0 24px}
-.hero .role{font-family:var(--display);font-weight:500;font-size:clamp(20px,3vw,28px);color:var(--accent);margin:0 0 20px}
-.hero p.lead{max-width:60ch;font-size:19px;color:var(--muted);margin:0 0 32px}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+/* hero */
+.hero{background:var(--violet);color:#fff;border-bottom-left-radius:48px;border-bottom-right-radius:48px;padding-bottom:72px}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;font-family:var(--display);font-weight:800;font-size:20px}
+.nav nav{display:flex;gap:24px;font-family:var(--body);font-weight:500;font-size:15px}
+.nav nav a{text-decoration:none;opacity:.85}.nav nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px}
+.hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center;padding-top:40px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(46px,8vw,92px);line-height:.95;letter-spacing:-.035em;margin:0 0 22px}
+.role{font-family:var(--display);font-weight:500;font-size:clamp(20px,2.6vw,26px);color:var(--sun);margin:0 0 18px}
+.lead{max-width:48ch;font-size:18px;opacity:.92;margin:0 0 30px}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:500;text-decoration:none;border:2px solid var(--accent)}
-.btn.primary{background:var(--accent);color:var(--accent-ink)}
-.btn.ghost{color:var(--ink);border-color:var(--line)}
-.btn:hover{border-color:var(--accent)}
-section{padding:56px 0;border-top:1px solid var(--line)}
-h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,4vw,38px);letter-spacing:-.02em;margin:0 0 28px}
-h3{font-family:var(--display);font-weight:700;font-size:21px;margin:0 0 4px}
-.path{position:relative;display:grid;gap:28px}
-.role-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px 28px}
-.role-card.now{border-left:6px solid var(--accent)}
-.role-card.before{border-left:6px solid var(--line)}
-.meta{color:var(--muted);font-size:15px;margin:0 0 14px}
-ul{margin:0;padding-left:20px}
-li{margin:6px 0}
-.company{color:var(--muted);margin:0 0 22px}
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px 40px}
-.skills h3{font-size:18px;margin-bottom:10px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
-.chips li{margin:0;background:var(--tint);border-radius:8px;padding:4px 12px;font-size:15px}
-.project{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px}
-.project .chips{margin:0 0 18px}
-.project+.project{margin-top:24px}
-.edu{display:grid;gap:18px}
-.edu div{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.edu p{margin:0}
-.edu .score{color:var(--muted)}
-footer{padding:40px 0 56px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
-.contact-big{font-family:var(--display);font-weight:700;font-size:clamp(24px,5vw,40px);word-break:break-word;margin:0 0 20px}
-.contact-big a{text-decoration-color:var(--accent);text-underline-offset:6px}
-@media (max-width:560px){header.top nav{gap:14px}.hero{padding:48px 0}.role-card,.project{padding:20px}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid #fff}
+.btn.primary{background:var(--sun);border-color:var(--sun);color:#0F172A}
+.btn:hover{transform:translateY(-2px)}
+/* demo window */
+.win{background:var(--surface);color:var(--ink);border-radius:18px;box-shadow:0 24px 60px rgba(8,16,50,.45);overflow:hidden}
+.win-bar{display:flex;align-items:center;gap:7px;padding:12px 16px;background:var(--tint);font-size:13px;color:var(--muted)}
+.dot{width:11px;height:11px;border-radius:50%;background:var(--line)}
+.win-bar span{margin-left:8px}
+.win-body{padding:20px}
+.win-body h2{font-size:18px;margin:0 0 4px;letter-spacing:0}
+.hint{margin:0 0 14px;font-size:14px;color:var(--muted)}
+.roles{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.roles button{font:inherit;font-weight:700;font-size:14px;padding:7px 16px;border-radius:999px;border:2px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.roles button[aria-pressed="true"]{background:var(--violet);border-color:var(--violet);color:#fff}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.acts button{font:inherit;font-weight:500;padding:11px;border-radius:10px;border:2px solid var(--violet);background:var(--violet);color:#fff;cursor:pointer}
+.acts button:disabled{background:transparent;border-style:dashed;border-color:var(--line);color:var(--muted);cursor:not-allowed}
+.pages{margin:0;font-size:14px;color:var(--muted)}.pages strong{color:var(--ink)}
+/* sections */
+section{padding:84px 0 0}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(32px,5vw,52px);letter-spacing:-.03em;line-height:1.05;margin:0 0 14px}
+.sub{color:var(--muted);max-width:56ch;margin:0 0 36px}
+h3{font-family:var(--display);font-weight:700;font-size:22px;margin:0 0 4px}
+.tl{position:relative;display:grid;gap:26px;padding-left:34px}
+.tl::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:3px;background:var(--line);border-radius:3px}
+.tl article{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px 28px}
+.tl article::before{content:"";position:absolute;left:-34px;top:30px;width:21px;height:21px;border-radius:50%;background:var(--bg);border:5px solid var(--line)}
+.tl article.now::before{border-color:var(--violet)}
+.meta{color:var(--muted);font-size:15px;margin:0 0 12px}
+ul{margin:0;padding-left:20px}li{margin:6px 0}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 24px}
+.skill h3{font-size:19px;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.chips li{margin:0;background:var(--tint);border-radius:8px;padding:4px 12px;font-size:15px;font-weight:500}
+.skill.big{background:var(--violet);border-color:var(--violet);color:#fff}
+.skill.big .chips li{background:rgba(255,255,255,.18)}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.proj{background:var(--surface);border:1px solid var(--line);border-top:8px solid var(--violet);border-radius:18px;padding:26px 28px}
+.proj:nth-child(2){border-top-color:var(--sun)}
+.proj .chips{margin:12px 0 16px}
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.edu div{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 24px}
+.edu p{margin:0;color:var(--muted);font-size:15px}
+.edu .pct{font-family:var(--display);font-weight:800;font-size:38px;color:var(--violet);line-height:1;margin-bottom:10px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .edu .pct{color:var(--sun)}}
+footer{margin-top:96px;background:var(--violet);color:#fff;border-top-left-radius:48px;border-top-right-radius:48px;padding:72px 0 56px}
+footer h2{margin-bottom:18px}
+.mail{display:inline-block;font-family:var(--display);font-weight:800;font-size:clamp(24px,5vw,48px);word-break:break-word;color:var(--sun);text-decoration-thickness:3px;text-underline-offset:8px}
+footer p{margin:22px 0 0;opacity:.9}
+@media (max-width:820px){.hero-grid{grid-template-columns:1fr;gap:36px}.hero{border-radius:0 0 32px 32px}footer{border-radius:32px 32px 0 0}}
+@media (max-width:520px){.nav nav{gap:14px}.tl{padding-left:28px}.tl article::before{left:-28px}.acts{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header class="top">
-    <span>Nandini N.</span>
-    <nav aria-label="Sections">
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#project">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <div class="hero">
-      <h1>Nandini Nizampatnam</h1>
-      <p class="role">Frontend Developer · React.js &amp; Next.js</p>
-      <p class="lead">I build responsive, reusable web interfaces and connect them to REST APIs. I’ve got about 3 years in software, including 1.5+ years in React and Next.js after starting out as a SuiteCRM developer. Based in Hyderabad, India.</p>
-      <div class="btns">
-        <a class="btn primary" href="mailto:nandini.eee2001@gmail.com">Email me</a>
-        <a class="btn ghost" href="https://linkedin.com/in/nizampatnam-nandini-617a3a215" target="_blank" rel="noopener">View LinkedIn</a>
+<div class="hero">
+  <div class="wrap">
+    <div class="nav">
+      <span>Nandini N.</span>
+      <nav aria-label="Sections"><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <h1>Nandini Nizampatnam</h1>
+        <p class="role">Frontend Developer · React.js &amp; Next.js</p>
+        <p class="lead">I build responsive, reusable web interfaces and connect them to REST APIs. About 3 years in software, 1.5+ of them in React and Next.js, after starting as a SuiteCRM developer. Based in Hyderabad.</p>
+        <div class="btns">
+          <a class="btn primary" href="mailto:nandini.eee2001@gmail.com">Email me</a>
+          <a class="btn" href="https://linkedin.com/in/nizampatnam-nandini-617a3a215" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/Nizampatnam20" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="win" aria-label="Interactive role-based access demo">
+        <div class="win-bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span>orders · role-based access demo</span></div>
+        <div class="win-body">
+          <h2>Try it: switch the user role</h2>
+          <p class="hint">The same screen changes with the role, like the access control I built in Verionce.</p>
+          <div class="roles" id="roles">
+            <button type="button" data-r="admin" aria-pressed="true">Admin</button>
+            <button type="button" data-r="manager" aria-pressed="false">Manager</button>
+            <button type="button" data-r="viewer" aria-pressed="false">Viewer</button>
+          </div>
+          <div class="acts" id="acts">
+            <button type="button" data-a="create">Create</button>
+            <button type="button" data-a="edit">Edit</button>
+            <button type="button" data-a="delete">Delete</button>
+            <button type="button" data-a="export">Export</button>
+          </div>
+          <p class="pages" id="pages"></p>
+        </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <section id="experience">
-      <h2>Experience</h2>
-      <p class="company">Software Engineer, Vivenns Global Private Limited, Jan 2024 to present</p>
-      <div class="path">
-        <article class="role-card now">
-          <h3>Frontend Developer (React.js / Next.js)</h3>
-          <p class="meta">May 2025 to present</p>
-          <ul>
-            <li>Build responsive web applications with React.js and Next.js.</li>
-            <li>Turn business requirements into UI screens.</li>
-            <li>Integrate REST APIs and show dynamic data on pages.</li>
-            <li>Fix alignment, responsiveness, and cross-browser issues.</li>
-            <li>Work with backend developers and QA to ship production-ready features.</li>
-          </ul>
-        </article>
-        <article class="role-card before">
-          <h3>SuiteCRM Developer</h3>
-          <p class="meta">Jan 2024 to Apr 2025</p>
-          <ul>
-            <li>Customized SuiteCRM modules, layouts, and relationships using PHP and MySQL.</li>
-            <li>Wrote Logic Hooks to automate CRM workflows.</li>
-            <li>Optimized database queries and improved CRM functionality.</li>
-            <li>Worked with stakeholders to turn requirements into custom CRM solutions.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+<main class="wrap">
+  <section id="experience">
+    <h2>Where I’ve worked</h2>
+    <p class="sub">Software Engineer at Vivenns Global Private Limited since January 2024, first on CRM and now on frontend.</p>
+    <div class="tl">
+      <article class="now">
+        <h3>Frontend Developer (React.js / Next.js)</h3>
+        <p class="meta">May 2025 to present</p>
+        <ul>
+          <li>Build responsive web applications with React.js and Next.js.</li>
+          <li>Turn business requirements into UI screens.</li>
+          <li>Integrate REST APIs and show dynamic data on pages.</li>
+          <li>Fix alignment, responsiveness, and cross-browser issues.</li>
+          <li>Work with backend developers and QA to ship production-ready features.</li>
+        </ul>
+      </article>
+      <article>
+        <h3>SuiteCRM Developer</h3>
+        <p class="meta">Jan 2024 to Apr 2025</p>
+        <ul>
+          <li>Customized SuiteCRM modules, layouts, and relationships using PHP and MySQL.</li>
+          <li>Wrote Logic Hooks to automate CRM workflows.</li>
+          <li>Optimized database queries and improved CRM functionality.</li>
+          <li>Worked with stakeholders to turn requirements into custom CRM solutions.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="skills">
-        <div><h3>Frontend</h3><ul class="chips"><li>React.js</li><li>Next.js</li><li>JavaScript (ES6+)</li><li>TypeScript</li><li>HTML5</li><li>CSS</li><li>Redux</li></ul></div>
-        <div><h3>Backend and data</h3><ul class="chips"><li>REST APIs</li><li>PHP</li><li>MySQL</li></ul></div>
-        <div><h3>CRM</h3><ul class="chips"><li>SuiteCRM customization</li><li>Logic Hooks</li><li>Module development</li><li>Workflow customization</li></ul></div>
-        <div><h3>Auth and security</h3><ul class="chips"><li>Session management</li><li>Role-Based Access Control</li></ul></div>
-        <div><h3>Tools</h3><ul class="chips"><li>GitLab</li><li>Postman</li><li>VS Code</li><li>Cursor AI</li></ul></div>
-      </div>
-    </section>
+  <section id="skills">
+    <h2>What I work with</h2>
+    <div class="skills">
+      <div class="skill big"><h3>Frontend</h3><ul class="chips"><li>React.js</li><li>Next.js</li><li>JavaScript (ES6+)</li><li>TypeScript</li><li>HTML5</li><li>CSS</li><li>Redux</li></ul></div>
+      <div class="skill"><h3>Backend and data</h3><ul class="chips"><li>REST APIs</li><li>PHP</li><li>MySQL</li></ul></div>
+      <div class="skill"><h3>CRM</h3><ul class="chips"><li>SuiteCRM customization</li><li>Logic Hooks</li><li>Module development</li><li>Workflow customization</li></ul></div>
+      <div class="skill"><h3>Auth and security</h3><ul class="chips"><li>Session management</li><li>Role-Based Access Control</li></ul></div>
+      <div class="skill"><h3>Tools</h3><ul class="chips"><li>GitLab</li><li>Postman</li><li>VS Code</li><li>Cursor AI</li></ul></div>
+    </div>
+  </section>
 
-    <section id="project">
-      <h2>Projects</h2>
-      <article class="project">
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <article class="proj">
         <h3>Verionce Platform</h3>
-        <p class="meta">Built with React.js, Next.js, and Redux</p>
-        <ul class="chips"><li>React.js</li><li>Next.js</li><li>Redux</li><li>REST APIs</li><li>RBAC</li><li>GitLab</li></ul>
+        <ul class="chips"><li>React.js</li><li>Next.js</li><li>Redux</li><li>REST APIs</li><li>RBAC</li></ul>
         <ul>
           <li>Built responsive, reusable UI screens from business requirements.</li>
-          <li>Used Redux for central state management so data stays in sync across components.</li>
+          <li>Used Redux to keep data in sync across components.</li>
           <li>Connected REST APIs with proper loading and error handling.</li>
-          <li>Added session management and cookie-based authentication for secure sessions.</li>
-          <li>Built Role-Based Access Control that decides which pages, buttons, and API actions each user role can use.</li>
-          <li>Created reusable components to cut duplicate code and make the app easier to maintain.</li>
+          <li>Added session management and cookie-based authentication.</li>
+          <li>Built Role-Based Access Control for pages, buttons, and API actions.</li>
+          <li>Created reusable components to cut duplicate code.</li>
         </ul>
       </article>
-      <article class="project">
+      <article class="proj">
         <h3>SuiteCRM Customization</h3>
-        <p class="meta">Custom CRM solutions built with PHP and MySQL, Jan 2024 to Apr 2025</p>
         <ul class="chips"><li>SuiteCRM</li><li>PHP</li><li>MySQL</li><li>Logic Hooks</li></ul>
         <ul>
-          <li>Customized and developed SuiteCRM modules to match each business requirement.</li>
-          <li>Wrote Logic Hooks that automate CRM workflows, so repetitive steps happen without manual work.</li>
-          <li>Reworked layouts, module relationships, and business processes to fit how teams actually work.</li>
-          <li>Optimized database queries and improved overall CRM functionality.</li>
-          <li>Worked directly with stakeholders to understand requirements and deliver the right solution.</li>
+          <li>Customized and developed modules to match each business requirement.</li>
+          <li>Wrote Logic Hooks that automate CRM workflows.</li>
+          <li>Reworked layouts, relationships, and business processes.</li>
+          <li>Optimized database queries and improved CRM functionality.</li>
+          <li>Worked directly with stakeholders on requirements.</li>
         </ul>
       </article>
-    </section>
+    </div>
+  </section>
 
-    <section id="education">
-      <h2>Education</h2>
-      <div class="edu">
-        <div><p><strong>B.Tech, Electrical and Electronics Engineering</strong><br>Vasireddy Venkatadri Institute of Technology, 2019 to 2023</p><p class="score">83%</p></div>
-        <div><p><strong>Intermediate (MPC)</strong><br>Sri Chaitanya Junior College, 2017 to 2019</p><p class="score">96%</p></div>
-        <div><p><strong>SSC</strong><br>Sri Chaitanya High School, 2016 to 2017</p><p class="score">93%</p></div>
-      </div>
-    </section>
-  </main>
+  <section id="education">
+    <h2>Education</h2>
+    <div class="edu">
+      <div><p class="pct">83%</p><h3>B.Tech, Electrical and Electronics Engineering</h3><p>Vasireddy Venkatadri Institute of Technology, 2019 to 2023</p></div>
+      <div><p class="pct">96%</p><h3>Intermediate (MPC)</h3><p>Sri Chaitanya Junior College, 2017 to 2019</p></div>
+      <div><p class="pct">93%</p><h3>SSC</h3><p>Sri Chaitanya High School, 2016 to 2017</p></div>
+    </div>
+  </section>
+</main>
 
-  <footer id="contact">
+<footer id="contact">
+  <div class="wrap">
     <h2>Let’s talk</h2>
-    <p class="contact-big"><a href="mailto:nandini.eee2001@gmail.com">nandini.eee2001@gmail.com</a></p>
-    <p><a href="https://linkedin.com/in/nizampatnam-nandini-617a3a215" target="_blank" rel="noopener">LinkedIn</a> · Hyderabad, India · Speaks English and Telugu</p>
-  </footer>
-</div>
+    <a class="mail" href="mailto:nandini.eee2001@gmail.com">nandini.eee2001@gmail.com</a>
+    <p><a href="https://linkedin.com/in/nizampatnam-nandini-617a3a215" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/Nizampatnam20" target="_blank" rel="noopener">GitHub</a> · Hyderabad, India · English and Telugu</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var perms={admin:{create:1,edit:1,delete:1,export:1,pages:'Dashboard, Orders, Reports, Settings'},
+             manager:{create:1,edit:1,delete:0,export:1,pages:'Dashboard, Orders, Reports'},
+             viewer:{create:0,edit:0,delete:0,export:0,pages:'Dashboard, Orders'}};
+  var roleBtns=document.querySelectorAll('#roles button'),actBtns=document.querySelectorAll('#acts button'),pages=document.getElementById('pages');
+  function set(r){
+    roleBtns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.r===r?'true':'false')});
+    actBtns.forEach(function(b){b.disabled=!perms[r][b.dataset.a]});
+    pages.innerHTML='<strong>Pages this role can open:</strong> '+perms[r].pages;
+  }
+  roleBtns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.r)})});
+  set('admin');
+})();
+</script>
 </body>
 </html>
