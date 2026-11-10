@@ -28,7 +28,7 @@ a{color:inherit}
 .nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;font-family:var(--display);font-weight:800;font-size:20px}
 .nav nav{display:flex;gap:24px;font-family:var(--body);font-weight:500;font-size:15px}
 .nav nav a{text-decoration:none;opacity:.85}.nav nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px}
-.hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center;padding-top:40px}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:center;padding-top:40px}
 h1{font-family:var(--display);font-weight:800;font-size:clamp(46px,8vw,92px);line-height:.95;letter-spacing:-.035em;margin:0 0 22px}
 .role{font-family:var(--display);font-weight:500;font-size:clamp(20px,2.6vw,26px);color:var(--sun);margin:0 0 18px}
 .lead{max-width:48ch;font-size:18px;opacity:.92;margin:0 0 30px}
@@ -104,25 +104,6 @@ footer p{margin:22px 0 0;opacity:.9}
           <a class="btn primary" href="mailto:nandini.eee2001@gmail.com">Email me</a>
           <a class="btn" href="https://linkedin.com/in/nizampatnam-nandini-617a3a215" target="_blank" rel="noopener">LinkedIn</a>
           <a class="btn" href="https://github.com/Nizampatnam20" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-      <div class="win" aria-label="Interactive role-based access demo">
-        <div class="win-bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span>orders · role-based access demo</span></div>
-        <div class="win-body">
-          <h2>Try it: switch the user role</h2>
-          <p class="hint">The same screen changes with the role, like the access control I built in Verionce.</p>
-          <div class="roles" id="roles">
-            <button type="button" data-r="admin" aria-pressed="true">Admin</button>
-            <button type="button" data-r="manager" aria-pressed="false">Manager</button>
-            <button type="button" data-r="viewer" aria-pressed="false">Viewer</button>
-          </div>
-          <div class="acts" id="acts">
-            <button type="button" data-a="create">Create</button>
-            <button type="button" data-a="edit">Edit</button>
-            <button type="button" data-a="delete">Delete</button>
-            <button type="button" data-a="export">Export</button>
-          </div>
-          <p class="pages" id="pages"></p>
         </div>
       </div>
     </div>
@@ -216,20 +197,5 @@ footer p{margin:22px 0 0;opacity:.9}
   </div>
 </footer>
 
-<script>
-(function(){
-  var perms={admin:{create:1,edit:1,delete:1,export:1,pages:'Dashboard, Orders, Reports, Settings'},
-             manager:{create:1,edit:1,delete:0,export:1,pages:'Dashboard, Orders, Reports'},
-             viewer:{create:0,edit:0,delete:0,export:0,pages:'Dashboard, Orders'}};
-  var roleBtns=document.querySelectorAll('#roles button'),actBtns=document.querySelectorAll('#acts button'),pages=document.getElementById('pages');
-  function set(r){
-    roleBtns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.r===r?'true':'false')});
-    actBtns.forEach(function(b){b.disabled=!perms[r][b.dataset.a]});
-    pages.innerHTML='<strong>Pages this role can open:</strong> '+perms[r].pages;
-  }
-  roleBtns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.r)})});
-  set('admin');
-})();
-</script>
 </body>
 </html>
