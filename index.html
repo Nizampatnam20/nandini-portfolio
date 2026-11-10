@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nandini Nizampatnam – Frontend Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F6FB; --surface:#FFFFFF; --ink:#16213E; --muted:#56607A; --line:#D9DFEE;
+  --accent:#2F4BFF; --accent-ink:#FFFFFF; --tint:#E6EAFF;
+  --display:'Bricolage Grotesque','Segoe UI',Arial,sans-serif;
+  --body:'DM Sans','Segoe UI',Arial,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0F1426;--surface:#171E38;--ink:#E8ECFA;--muted:#9AA5C6;--line:#2A3355;--accent:#7C92FF;--accent-ink:#0F1426;--tint:#222B52;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0F1426;--surface:#171E38;--ink:#E8ECFA;--muted:#9AA5C6;--line:#2A3355;--accent:#7C92FF;--accent-ink:#0F1426;--tint:#222B52;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-family:var(--display);font-weight:700}
+header.top nav{display:flex;gap:22px;font-family:var(--body);font-weight:500;font-size:15px}
+header.top nav a{text-decoration:none;color:var(--muted)}
+header.top nav a:hover{color:var(--ink)}
+.hero{padding:72px 0 64px}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(44px,9vw,92px);line-height:1;letter-spacing:-.03em;margin:0 0 24px}
+.hero .role{font-family:var(--display);font-weight:500;font-size:clamp(20px,3vw,28px);color:var(--accent);margin:0 0 20px}
+.hero p.lead{max-width:60ch;font-size:19px;color:var(--muted);margin:0 0 32px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:500;text-decoration:none;border:2px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--ink);border-color:var(--line)}
+.btn:hover{border-color:var(--accent)}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,4vw,38px);letter-spacing:-.02em;margin:0 0 28px}
+h3{font-family:var(--display);font-weight:700;font-size:21px;margin:0 0 4px}
+.path{position:relative;display:grid;gap:28px}
+.role-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px 28px}
+.role-card.now{border-left:6px solid var(--accent)}
+.role-card.before{border-left:6px solid var(--line)}
+.meta{color:var(--muted);font-size:15px;margin:0 0 14px}
+ul{margin:0;padding-left:20px}
+li{margin:6px 0}
+.company{color:var(--muted);margin:0 0 22px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px 40px}
+.skills h3{font-size:18px;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips li{margin:0;background:var(--tint);border-radius:8px;padding:4px 12px;font-size:15px}
+.project{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px}
+.project .chips{margin:0 0 18px}
+.project+.project{margin-top:24px}
+.edu{display:grid;gap:18px}
+.edu div{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.edu p{margin:0}
+.edu .score{color:var(--muted)}
+footer{padding:40px 0 56px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+.contact-big{font-family:var(--display);font-weight:700;font-size:clamp(24px,5vw,40px);word-break:break-word;margin:0 0 20px}
+.contact-big a{text-decoration-color:var(--accent);text-underline-offset:6px}
+@media (max-width:560px){header.top nav{gap:14px}.hero{padding:48px 0}.role-card,.project{padding:20px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <span>Nandini N.</span>
+    <nav aria-label="Sections">
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#project">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>Nandini Nizampatnam</h1>
+      <p class="role">Frontend Developer · React.js &amp; Next.js</p>
+      <p class="lead">I build responsive, reusable web interfaces and connect them to REST APIs. I’ve got about 3 years in software, including 1.5+ years in React and Next.js after starting out as a SuiteCRM developer. Based in Hyderabad, India.</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:nandini.eee2001@gmail.com">Email me</a>
+        <a class="btn ghost" href="https://linkedin.com/in/nizampatnam-nandini-617a3a215" target="_blank" rel="noopener">View LinkedIn</a>
+      </div>
+    </div>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <p class="company">Software Engineer, Vivenns Global Private Limited, Jan 2024 to present</p>
+      <div class="path">
+        <article class="role-card now">
+          <h3>Frontend Developer (React.js / Next.js)</h3>
+          <p class="meta">May 2025 to present</p>
+          <ul>
+            <li>Build responsive web applications with React.js and Next.js.</li>
+            <li>Turn business requirements into UI screens.</li>
+            <li>Integrate REST APIs and show dynamic data on pages.</li>
+            <li>Fix alignment, responsiveness, and cross-browser issues.</li>
+            <li>Work with backend developers and QA to ship production-ready features.</li>
+          </ul>
+        </article>
+        <article class="role-card before">
+          <h3>SuiteCRM Developer</h3>
+          <p class="meta">Jan 2024 to Apr 2025</p>
+          <ul>
+            <li>Customized SuiteCRM modules, layouts, and relationships using PHP and MySQL.</li>
+            <li>Wrote Logic Hooks to automate CRM workflows.</li>
+            <li>Optimized database queries and improved CRM functionality.</li>
+            <li>Worked with stakeholders to turn requirements into custom CRM solutions.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div><h3>Frontend</h3><ul class="chips"><li>React.js</li><li>Next.js</li><li>JavaScript (ES6+)</li><li>TypeScript</li><li>HTML5</li><li>CSS</li><li>Redux</li></ul></div>
+        <div><h3>Backend and data</h3><ul class="chips"><li>REST APIs</li><li>PHP</li><li>MySQL</li></ul></div>
+        <div><h3>CRM</h3><ul class="chips"><li>SuiteCRM customization</li><li>Logic Hooks</li><li>Module development</li><li>Workflow customization</li></ul></div>
+        <div><h3>Auth and security</h3><ul class="chips"><li>Session management</li><li>Role-Based Access Control</li></ul></div>
+        <div><h3>Tools</h3><ul class="chips"><li>GitLab</li><li>Postman</li><li>VS Code</li><li>Cursor AI</li></ul></div>
+      </div>
+    </section>
+
+    <section id="project">
+      <h2>Projects</h2>
+      <article class="project">
+        <h3>Verionce Platform</h3>
+        <p class="meta">Built with React.js, Next.js, and Redux</p>
+        <ul class="chips"><li>React.js</li><li>Next.js</li><li>Redux</li><li>REST APIs</li><li>RBAC</li><li>GitLab</li></ul>
+        <ul>
+          <li>Built responsive, reusable UI screens from business requirements.</li>
+          <li>Used Redux for central state management so data stays in sync across components.</li>
+          <li>Connected REST APIs with proper loading and error handling.</li>
+          <li>Added session management and cookie-based authentication for secure sessions.</li>
+          <li>Built Role-Based Access Control that decides which pages, buttons, and API actions each user role can use.</li>
+          <li>Created reusable components to cut duplicate code and make the app easier to maintain.</li>
+        </ul>
+      </article>
+      <article class="project">
+        <h3>SuiteCRM Customization</h3>
+        <p class="meta">Custom CRM solutions built with PHP and MySQL, Jan 2024 to Apr 2025</p>
+        <ul class="chips"><li>SuiteCRM</li><li>PHP</li><li>MySQL</li><li>Logic Hooks</li></ul>
+        <ul>
+          <li>Customized and developed SuiteCRM modules to match each business requirement.</li>
+          <li>Wrote Logic Hooks that automate CRM workflows, so repetitive steps happen without manual work.</li>
+          <li>Reworked layouts, module relationships, and business processes to fit how teams actually work.</li>
+          <li>Optimized database queries and improved overall CRM functionality.</li>
+          <li>Worked directly with stakeholders to understand requirements and deliver the right solution.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="edu">
+        <div><p><strong>B.Tech, Electrical and Electronics Engineering</strong><br>Vasireddy Venkatadri Institute of Technology, 2019 to 2023</p><p class="score">83%</p></div>
+        <div><p><strong>Intermediate (MPC)</strong><br>Sri Chaitanya Junior College, 2017 to 2019</p><p class="score">96%</p></div>
+        <div><p><strong>SSC</strong><br>Sri Chaitanya High School, 2016 to 2017</p><p class="score">93%</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <h2>Let’s talk</h2>
+    <p class="contact-big"><a href="mailto:nandini.eee2001@gmail.com">nandini.eee2001@gmail.com</a></p>
+    <p><a href="https://linkedin.com/in/nizampatnam-nandini-617a3a215" target="_blank" rel="noopener">LinkedIn</a> · Hyderabad, India · Speaks English and Telugu</p>
+  </footer>
+</div>
+</body>
+</html>
